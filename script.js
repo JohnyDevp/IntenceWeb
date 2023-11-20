@@ -7,10 +7,11 @@ btn.addEventListener('submit', (e) => {
         name:document.getElementById("name").value,
         contact:document.getElementById("contact").value,
         intence:document.getElementById("intence").value,
-        date:document.getElementById("date").value,
+        date:document.getElementById("dtpick").value,
         ispaid:document.getElementById("ispaid").value,
         whowrite:document.getElementById("whowrite").value});
 
+  
     fetch(url)
         .then(response => response.text())
         .then((text) => {

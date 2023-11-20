@@ -2,10 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sample Form</title>
+    <title>Zápis intencí</title>
     <link rel="stylesheet" href="form.css">
+
+
+    <!-- calendar links -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+    <script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script> 
 </head>
-<body>
+<body>    
     <div class="form-container" style="visibility: unset;">
         <form id="intenceForm" method="post">
             <h2>Zápis nové intence</h2>
@@ -22,7 +38,20 @@
                 <textarea id="intence" name="intence" rows="4" ></textarea>
             </div>
             <div class="form-group">
-                <span style="margin-right: 20px;">Datum</span><input type='date' name="date" id="date">
+                <label for="datetimepicker2">Datum</label>
+                    <div class='input-group date' id='datetimepicker2'>
+                        <input type='text' class="form-control" id="dtpick"/>
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                    <script type="text/javascript">
+                        $(function () {
+                            $('#datetimepicker2').datetimepicker({
+                                locale: 'cs'
+                            });
+                        });
+                    </script>
             </div>
             <div class="form-group">
                 <span style="margin-right: 20px; align-items:center;">Zaplaceno</span><input type="checkbox" name="ispaid" id="ispaid">
@@ -34,9 +63,9 @@
             <button type="submit" style="font-weight:bold; font-size:medium">Zapsat intenci</button>
         </form>
     </div>
-    <div id="users"></div>
+
+    <iframe class="calendar" src="https://calendar.google.com/calendar/embed?src=c1026aae1e4c911f8607547ea54481de615540470c3b8c0e0eacf6949d24f5e7%40group.calendar.google.com&ctz=Europe%2FPrague" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 </body>
 </html>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js" integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="script.js"></script>
