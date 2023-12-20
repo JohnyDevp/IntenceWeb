@@ -7,14 +7,58 @@
     <title>Zápis intencí</title>
 </head>
 <body>
-   <div class="calendar-container">
-        <div class="dayName">PO</div>
-        <div class="dayName">ÚT</div>
-        <div class="dayName">ST</div>
-        <div class="dayName">ČT</div>
-        <div class="dayName">PÁ</div>
-        <div class="dayName">SO</div>
-        <div class="dayName">NE</div>
-   </div> 
+    <div class="month-control">
+        <div class="arrow" onclick="moveToPrevMonth()">&langle;&langle;</div>
+        <div id='month-name' class="month-name"> 
+            <!-- here is displayed the name of the month and year -->
+        </div>
+        <div class="arrow" onclick="moveToNextMonth()">&rangle;&rangle;</div>
+    </div>
+
+    <div id='cal-cont' class="calendar-container">
+        <!-- calendar content including constant row with day-names shortcuts -->
+    </div> 
+    
+    <!-- modal window to see details about whole day -->
+    <div id="modal-day-detail" class="modal">
+        <div class="modal-content">
+            <div id="mass-date" class="mass-date">
+
+            </div>
+            <div id="mass-title" class="mass-title">
+                <!-- here is displayed name of the mass  -->
+            </div>
+            <div id='mass-table' class="mass-table">
+                <!-- here are displayed times of masses -->
+            </div>
+            
+            <!-- button below is using the dialog instance of this dialog -->
+            <button class="dialog-close-btn" onclick="closeDayModal()">Close</button>
+        </div>  
+    </div>
+    
+    <!-- modal window to see details about selected mass -->
+    <div id="modal-mass-detail" class="modal">
+        <div class="modal-content">
+            <div id="modal-mass-detail-content">
+                <!-- here will be displayed the detail about the mass -->
+            </div>
+            <!-- button below is using the dialog instance of this dialog -->
+            <button class="dialog-close-btn" onclick="closeDetailModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- modal window to create mass intention -->
+    <div id="modal-intence-creation" class="modal">
+        <div class="modal-content">
+            <div id="modal-mass-detail-content">
+                <!-- here will be displayed the detail about the mass -->
+            </div>
+            <!-- button below is using the dialog instance of this dialog -->
+            <button class="dialog-close-btn" onclick="closeIntenceCreationModal()">Close</button>
+        </div>
+    </div>
 </body>
 </html>
+
+<script src="script.js"></script>
