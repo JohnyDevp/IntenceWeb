@@ -183,11 +183,14 @@ function showMassDetail(day_record, recordWithGeneralInfo){
 }
 
 function createMassIntence(day_record) {
+    dayDetailModal.style.display = 'none'
+    intenceCreationModal.style.display = 'grid'
 
 }
 
 function closeIntenceCreationModal(){
-
+    intenceCreationModal.style.display = 'none'
+    dayDetailModal.style.display = 'grid'
 }
 
 function closeDayModal() {
