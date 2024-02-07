@@ -3,6 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .month-control {
@@ -69,6 +70,9 @@ body {
 
 .today {
     background-color: rgb(227, 199, 60);
+    color: chocolate;
+    font-weight: bold;
+    font-size: larger;
 }
 
 .out-month-day {
@@ -96,12 +100,15 @@ body {
 .modal-content {
     display: grid;
     justify-content: center;
+    align-items: center;
+    justify-items: center;
     background-color: #fefefe;
     border-radius: 1em;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 20%; 
+    width: fit-content; 
+    height: fit-content;
 }
 
 .mass-title {
@@ -194,11 +201,60 @@ body {
     border-radius: 0.5em;
 }
 
+.dialog-close-btn {
+    margin: 5%;
+    background-color: #a3a78f;
+    display: grid;
+    width: fit-content;
+    padding: 0.5em 1em 0.5em 1em;
+    border-radius: 0.5em;
+    height: fit-content;
+    cursor: pointer;
+}
+
+.dialog-close-btn:hover {
+    background-color: #a3a78fba;
+}
+
+.form-content {
+    display: grid;
+    height: fit-content;
+    width: fit-content;
+}
+
+.form-element {
+    display: grid;
+    justify-content: center;
+    margin: 3% 0 3% 0;
+}
+
+input, textarea{
+    font-size: larger;
+    min-width: 300px;
+    max-width: 300px;
+}
+
+.cell-bg-color-occupied, .cell-bg-color-free, .cell-bg-color-mix {
+    background-color: inherit;
+}
+
 @media only screen and (max-width: 600px) {
     .calendar-cell-mass-time-occupied {
         display: none;
     }
     .calendar-cell-mass-time-free {
         display: none;
+    }
+
+    .cell-bg-color-occupied {
+        background-color: rgba(201, 92, 41, 0.404);
+    }
+
+    .cell-bg-color-free {
+        background-color: rgba(0, 128, 0, 0.488);
+    }
+
+    .cell-bg-color-mix {
+        background-color: rgba(137, 43, 226, 0.457);
     }
 }

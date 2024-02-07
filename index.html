@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Zápis intencí</title>
 </head>
 <body>
     <div class="month-control">
-        <div class="arrow" onclick="moveToPrevMonth()">&langle;&langle;</div>
+        <div id="cal-control-arrow-left" class="arrow" onclick="moveToPrevMonth()">&langle;&langle;</div>
         <div id='month-name' class="month-name"> 
             <!-- here is displayed the name of the month and year -->
         </div>
-        <div class="arrow" onclick="moveToNextMonth()">&rangle;&rangle;</div>
+        <div id="cal-control-arrow-right" class="arrow" onclick="moveToNextMonth()">&rangle;&rangle;</div>
     </div>
 
     <div id='cal-cont' class="calendar-container">
@@ -23,13 +24,13 @@
     <div id="modal-day-detail" class="modal">
         <div class="modal-content">
             <div id="mass-date" class="mass-date">
-
+                <!-- here is displayed date of the mass  -->
             </div>
             <div id="mass-title" class="mass-title">
                 <!-- here is displayed name of the mass  -->
             </div>
             <div id='mass-table' class="mass-table">
-                <!-- here are displayed times of masses -->
+                <!-- here are displayed times of masses and whether they are free or not -->
             </div>
             
             <!-- button below is using the dialog instance of this dialog -->
@@ -51,7 +52,35 @@
     <!-- modal window to create mass intention -->
     <div id="modal-intence-creation" class="modal">
         <div class="modal-content">
-            
+            <div id="form-mass-date" class="mass-date">
+                <!-- here is displayed date of the mass  -->
+            </div>
+            <div id="form-mass-title" class="mass-title">
+                <!-- here is displayed name of the mass  -->
+            </div>
+            <div id="form-content" class="form-content">
+                <div class="form-element">
+                    <label for="txtIntention">Text Intence</label>
+                    <textarea name="txtIntention" id="txtIntention"></textarea>  
+                </div>
+                <div class="form-element">
+                    <label for="whoOrdered">Kdo objednal</label>
+                    <input type="text" name="whoOrdered" id="whoOrdered" />
+                </div>
+                <div class="form-element">
+                    <label for="phoneContact">Tel. kontakt</label>
+                    <input type="tel" name="phoneContact" id="phoneContact" />
+                </div>
+                <div class="form-element">
+                    <label for="amount">Částka</label>
+                    <input type="number" name="amount" id="amount" />
+                </div>
+                <div class="form-element">
+                    <label for="whoWrite">Zapsal</label>
+                    <input type="text" name="whoWrite" id="whoWrite" />
+                </div>
+                <button id="intentionSubmitBtn">Uložit intenci</button>
+            </div>
             <!-- button below is using the dialog instance of this dialog -->
             <button class="dialog-close-btn" onclick="closeIntenceCreationModal()">Close</button>
         </div>
